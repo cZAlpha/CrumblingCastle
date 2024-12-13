@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwc21k8mkq1qy"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/quest.gd" id="1_wq66b"]
+
+[node name="SlimeQuest" type="Node"]
+script = ExtResource("1_wq66b")
+quest_name = "Kill a Slime!"
+quest_description = "Go outside and kill one slime"
+reached_goal_text = "Slime has been killed."
+reward_amount = 10

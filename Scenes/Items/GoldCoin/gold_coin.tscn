@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://74wd7f55pdt0"]
+
+[ext_resource type="Texture2D" uid="uid://be7o6tgt1mb5u" path="res://Assets/UI/Gold/goldCoin.png" id="1_8wx68"]
+[ext_resource type="Script" path="res://Scripts/Items/GoldCoin/gold_coin.gd" id="2_7bu80"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x22ev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8wx68")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ep6k"]
+radius = 16.6667
+
+[node name="GoldCoin" type="AnimatedSprite2D"]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_x22ev")
+autoplay = "default"
+script = ExtResource("2_7bu80")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4ep6k")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

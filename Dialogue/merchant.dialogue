@@ -1,0 +1,49 @@
+~ start
+do gameManagerSwapInDialogue() # Swap the inDialogue state variable at the start of the dialogue sequence
+if !hasMetMerchant: # First time speaking to merchant dialogue
+	Merchant: Hello there, I haven't seen you around before...
+	- I'm new around here
+		Merchant: I can see that! Well, would you like to buy anything?
+		- Yes
+			do toggleShopGUI() # Toggles the shop GUI
+		- No
+	- I don't see how that's your business 
+		Merchant: Rude!
+		do incrementMerchantNPCRudenessMeter() # Rude option
+	- *Say Nothing*
+		Merchant: Okay... would you like to buy anything?
+		- Yes
+			do toggleShopGUI() # Toggles the shop GUI
+		- No
+	- Beep boop
+		Merchant: Okay... would you like to buy anything?
+		- Yes
+			do toggleShopGUI() # Toggles the shop GUI
+		- No
+	do metMerchant()
+
+elif merchantNPCRudenessMeter == 0 and hasMetMerchant: # If you were not rude to the merchant before
+	Merchant: Nice to see you again, what can I do you for?
+	- I would like to see your wares
+		Merchant: Go right ahead
+		do toggleShopGUI() # Toggles the shop GUI
+	- Nothing, goodbye
+
+elif merchantNPCRudenessMeter == 1 and hasMetMerchant: # If you were rude to the merchant before
+	Merchant: What are you doing here?
+	- I'm here to apologize
+		Merchant: That apology was well in order. I accept your apology
+		do decrementMerchantNPCRudenessMeter() # Nice option
+		- Can I see what you got?
+			Merchant: Of course
+			do toggleShopGUI() # Toggles teh shop GUI
+		- I appreciate it, goodbye
+	- Here to relax
+		Merchant: There's no relaxing in my shop for hooligans, get out!
+	- I was just leaving...
+		Merchant: Good! And don't come back
+
+
+
+do gameManagerSwapInDialogue() # Swap the inDialogue state variable at the end of the dialogue sequence
+=> END

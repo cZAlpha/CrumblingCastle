@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu1fg4ih5iiut"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/quest.gd" id="1_6evyy"]
+
+[node name="FishiesforFishiesQuest" type="Node"]
+script = ExtResource("1_6evyy")
+quest_name = "Fishing for Fishies!"
+quest_description = "Go to the dock and fish for a fishie"
+reached_goal_text = "Great job! Now return to the merchant for your reward"
+reward_amount = 30

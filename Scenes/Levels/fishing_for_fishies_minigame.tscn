@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bno1832t13rq8"]
+
+[ext_resource type="Texture2D" uid="uid://dgj21hjfl4yx8" path="res://Assets/UI/NineRects/V2_generalUINineRect.png" id="1_s4u75"]
+
+[sub_resource type="Gradient" id="Gradient_tr58a"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dj50b"]
+gradient = SubResource("Gradient_tr58a")
+
+[node name="FishingForFishiesMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_top = -112.0
+offset_right = -1731.0
+offset_bottom = -976.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(-195, -112)
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, -195, -112)
+
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_dj50b")
+
+[node name="MinigameUI" type="ReferenceRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_width = 6.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/MinigameUI"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 310.0
+offset_right = 1255.0
+offset_bottom = 835.0
+texture = ExtResource("1_s4u75")
+patch_margin_left = 1
+patch_margin_top = 13
+patch_margin_right = 1
+patch_margin_bottom = 1
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

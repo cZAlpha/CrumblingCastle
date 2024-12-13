@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy6hmgtn5afsw"
+path="res://.godot/imported/King Gizz - Tetrachromacy.mp3-b8a710e45d4b691fa0e02f6ade7745e3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Polygondwanaland/King Gizz - Tetrachromacy.mp3"
+dest_files=["res://.godot/imported/King Gizz - Tetrachromacy.mp3-b8a710e45d4b691fa0e02f6ade7745e3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

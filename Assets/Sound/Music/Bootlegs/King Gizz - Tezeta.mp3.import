@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5xxfwl60o0up"
+path="res://.godot/imported/King Gizz - Tezeta.mp3-e047886ac31296b8399a0b79b64cc1fe.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Bootlegs/King Gizz - Tezeta.mp3"
+dest_files=["res://.godot/imported/King Gizz - Tezeta.mp3-e047886ac31296b8399a0b79b64cc1fe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

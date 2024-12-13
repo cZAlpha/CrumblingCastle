@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8qr1ovoj5pwo"]
+
+[ext_resource type="Theme" uid="uid://g71iua03uavk" path="res://Themes/main_menu_button_theme.tres" id="1_a835n"]
+[ext_resource type="Script" path="res://Scripts/UI/options_menu.gd" id="1_p0wa3"]
+[ext_resource type="Theme" uid="uid://dewn5fcvy484" path="res://Themes/optionsMenuSliderTheme.tres" id="2_w2vs8"]
+
+[sub_resource type="Gradient" id="Gradient_egwwd"]
+offsets = PackedFloat32Array(0.0120773, 1)
+colors = PackedColorArray(0.197433, 0.058837, 0.00212603, 1, 0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6el2w"]
+gradient = SubResource("Gradient_egwwd")
+width = 1000
+height = 1000
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p0wa3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_6el2w")
+
+[node name="MasterVolumeHBox" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -550.0
+offset_top = 117.16
+offset_right = 550.0
+offset_bottom = 157.16
+grow_horizontal = 2
+theme_override_constants/separation = 35
+
+[node name="MasterVolumeLabel" type="Label" parent="CanvasLayer/MasterVolumeHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Master Volume"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="CanvasLayer/MasterVolumeHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_w2vs8")
+min_value = 1.0
+value = 1.0
+
+[node name="BackButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -115.36
+offset_right = 255.0
+offset_bottom = -70.36
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_a835n")
+text = "Back To Main Menu"
+
+[node name="MusicVolumeHBox" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -550.0
+offset_top = 250.0
+offset_right = 550.0
+offset_bottom = 290.0
+grow_horizontal = 2
+theme_override_constants/separation = 56
+
+[node name="MusicVolumeLabel" type="Label" parent="CanvasLayer/MusicVolumeHBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CanvasLayer/MusicVolumeHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_w2vs8")
+min_value = -80.0
+max_value = -20.0
+value = -20.0
+
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="drag_ended" from="CanvasLayer/MusicVolumeHBox/MusicVolumeSlider" to="." method="_on_music_volume_slider_drag_ended"]
+[connection signal="value_changed" from="CanvasLayer/MusicVolumeHBox/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcl6j2d77q4c7"]
+
+[ext_resource type="Texture2D" uid="uid://clcekg2qgmncg" path="res://Assets/ParticleFX/fire_01.png" id="1_pft0o"]
+[ext_resource type="Texture2D" uid="uid://fut6slxxifu6" path="res://Assets/ParticleFX/fire_02.png" id="2_yixut"]
+
+[sub_resource type="Gradient" id="Gradient_stbrv"]
+offsets = PackedFloat32Array(0, 0.38206, 0.657807, 1)
+colors = PackedColorArray(0.917618, 0.494874, 0.409812, 1, 0.787683, 0.421658, 0.211742, 0.909322, 0.717647, 0.160784, 0.0705882, 0.764706, 0.160196, 0.164824, 0.18488, 0.764706)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r5tt5"]
+gradient = SubResource("Gradient_stbrv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xqh1d"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+angle_min = 10.0
+angle_max = 20.0
+initial_velocity_min = 5.0
+initial_velocity_max = 50.0
+angular_velocity_min = -10.0
+angular_velocity_max = 30.0
+gravity = Vector3(0, -310, 0)
+scale_min = 0.1
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_r5tt5")
+
+[sub_resource type="Gradient" id="Gradient_pmdbs"]
+offsets = PackedFloat32Array(0, 0.239203, 0.471761, 1)
+colors = PackedColorArray(0.270588, 0.435294, 0.717647, 0.466667, 0.797049, 0.299226, 0.306259, 1, 0.772549, 0.262745, 0.2, 0.886275, 0.87451, 0.0784314, 0, 0.713726)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pqhhh"]
+gradient = SubResource("Gradient_pmdbs")
+
+[sub_resource type="Curve" id="Curve_ykac3"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 23.8749), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mrfc0"]
+curve = SubResource("Curve_ykac3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qpqen"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 40.0
+angle_min = 1.07288e-05
+angle_max = 360.0
+initial_velocity_min = 10.0
+initial_velocity_max = 76.8
+angular_velocity_min = 4.99998
+angular_velocity_max = 35.0
+gravity = Vector3(0, -300, 0)
+linear_accel_curve = SubResource("CurveTexture_mrfc0")
+radial_accel_min = -2.23517e-06
+radial_accel_max = 35.09
+scale_min = 0.1
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_pqhhh")
+
+[node name="Fire" type="Node2D"]
+scale = Vector2(1e-05, 1e-05)
+
+[node name="Fire1" type="GPUParticles2D" parent="."]
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_xqh1d")
+texture = ExtResource("1_pft0o")
+lifetime = 0.8
+
+[node name="Fire2" type="GPUParticles2D" parent="."]
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_qpqen")
+texture = ExtResource("2_yixut")
+lifetime = 0.5
+explosiveness = 0.1
+randomness = 1.0

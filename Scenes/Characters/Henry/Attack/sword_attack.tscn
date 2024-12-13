@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd7msv6wny5ei"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/Henry/Attack/sword_attack.gd" id="1_v0kqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76ba2"]
+size = Vector2(45, 45)
+
+[node name="SwordAttackArea" type="Area2D" groups=["Sword"]]
+script = ExtResource("1_v0kqo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_76ba2")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

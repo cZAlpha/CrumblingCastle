@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2injyb6ms3ja"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/quest.gd" id="1_dsr2x"]
+
+[node name="MiraNPCFireQuest" type="Node"]
+script = ExtResource("1_dsr2x")
+quest_name = "Visit Fire Wall"
+quest_description = "Visit the fire to the west of town"
+reached_goal_text = "Return to Mira to claim reward"
+reward_amount = 5

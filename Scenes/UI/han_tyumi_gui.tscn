@@ -1,0 +1,661 @@
+[gd_scene load_steps=58 format=3 uid="uid://qo3w3vv0yipm"]
+
+[ext_resource type="Script" path="res://Scripts/UI/han_tyumi_gui.gd" id="1_7vguv"]
+[ext_resource type="Texture2D" uid="uid://c2anvl4sccsph" path="res://Assets/UI/Hearts/UI_Hearts/Active/hearts_ui_active.png" id="1_ymuw8"]
+[ext_resource type="Texture2D" uid="uid://bb0o8bke4g5tp" path="res://Assets/UI/Hearts/UI_Hearts/Inactive/heart_ui_inactive.png" id="2_l7sy5"]
+[ext_resource type="Texture2D" uid="uid://be7o6tgt1mb5u" path="res://Assets/UI/Gold/goldCoin.png" id="4_5y4de"]
+[ext_resource type="LabelSettings" uid="uid://cc24psy2brk55" path="res://Themes/toolTipLabelSettings.tres" id="5_6b4q2"]
+[ext_resource type="LabelSettings" uid="uid://bk7qo4qf61mhl" path="res://Themes/QuestDetailsUI_LabelSettings.tres" id="6_m7yno"]
+[ext_resource type="Theme" uid="uid://kw7jwor5tgtd" path="res://Themes/settings_gui_button_theme.tres" id="7_ug1go"]
+[ext_resource type="Theme" uid="uid://dewn5fcvy484" path="res://Themes/optionsMenuSliderTheme.tres" id="7_xux7s"]
+[ext_resource type="Theme" uid="uid://d35y7r6nuah2v" path="res://Themes/questTabContainerTheme.tres" id="9_dfaxw"]
+[ext_resource type="LabelSettings" uid="uid://dcuilg2e85s6r" path="res://Themes/settingsGUIQuestLabel.tres" id="10_a4ujg"]
+[ext_resource type="Texture2D" uid="uid://eeorqepmh4vi" path="res://Assets/UI/NineRects/generalUINineRect.png" id="11_ecbje"]
+[ext_resource type="Texture2D" uid="uid://kek83dq4jkd6" path="res://Assets/UI/NineRects/woodGUINineRect.png" id="12_3refx"]
+[ext_resource type="LabelSettings" uid="uid://bjv03t13ta414" path="res://Themes/ShopGUI_PlayerName_LabelSettings.tres" id="13_76hhw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiaen"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl0fe"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n71e5"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4si1"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajwfh"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ldj"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o483l"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krn2s"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hysy8"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eop5r"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg5r3"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1000, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hegmp"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mutr6"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ft13"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_047ag"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pi04"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oitth"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_471nu"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_108wq"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlbd4"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(1900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maog3"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2000, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd1p8"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onxfd"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3ie8"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_352ka"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc03u"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnvy8"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmw3y"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8g1w8"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vwav"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(2900, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nomd4"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3000, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41myv"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu1rt"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j262g"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbbho"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8xhv"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8s5e"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8n6b"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no53f"]
+atlas = ExtResource("1_ymuw8")
+region = Rect2(3800, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48auy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiaen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl0fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n71e5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4si1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajwfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ldj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o483l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krn2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hysy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eop5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg5r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hegmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mutr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ft13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_047ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pi04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oitth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_471nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_108wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlbd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maog3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd1p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onxfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3ie8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_352ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc03u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnvy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmw3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8g1w8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vwav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nomd4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41myv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu1rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j262g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbbho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8xhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8s5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8n6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no53f")
+}],
+"loop": true,
+"name": &"active",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l7sy5")
+}],
+"loop": true,
+"name": &"inactive",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjlx3"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Gradient" id="Gradient_6oj2b"]
+offsets = PackedFloat32Array(0, 0.371981, 1)
+colors = PackedColorArray(0, 0, 0, 0.835294, 0, 0, 0, 0.763621, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fvfv1"]
+gradient = SubResource("Gradient_6oj2b")
+width = 400
+height = 4000
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_dk75u"]
+font_size = 22
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.482353)
+shadow_offset = Vector2(2.73, 2.42)
+
+[node name="HanTyumi_GUI" type="Node2D"]
+process_mode = 3
+z_index = 1000
+position = Vector2(-195, -112)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_7vguv")
+
+[node name="GamePlayGUI" type="ReferenceRect" parent="."]
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 1936.0
+offset_bottom = 1098.0
+border_color = Color(0.768627, 0, 0, 1)
+border_width = 4.0
+
+[node name="HeartHBoxContainer" type="HBoxContainer" parent="GamePlayGUI"]
+layout_mode = 0
+offset_left = 49.9999
+offset_top = 50.0
+offset_right = 550.0
+offset_bottom = 150.0
+
+[node name="Heart0" type="AnimatedSprite2D" parent="GamePlayGUI/HeartHBoxContainer"]
+position = Vector2(50, 50)
+sprite_frames = SubResource("SpriteFrames_48auy")
+animation = &"active"
+autoplay = "active"
+
+[node name="Heart1" type="AnimatedSprite2D" parent="GamePlayGUI/HeartHBoxContainer"]
+position = Vector2(150, 50)
+sprite_frames = SubResource("SpriteFrames_48auy")
+animation = &"active"
+autoplay = "active"
+
+[node name="Heart2" type="AnimatedSprite2D" parent="GamePlayGUI/HeartHBoxContainer"]
+position = Vector2(250, 50)
+sprite_frames = SubResource("SpriteFrames_48auy")
+animation = &"active"
+autoplay = "active"
+
+[node name="Heart3" type="AnimatedSprite2D" parent="GamePlayGUI/HeartHBoxContainer"]
+position = Vector2(350, 50)
+sprite_frames = SubResource("SpriteFrames_48auy")
+animation = &"active"
+autoplay = "active"
+
+[node name="Heart4" type="AnimatedSprite2D" parent="GamePlayGUI/HeartHBoxContainer"]
+position = Vector2(450, 50)
+sprite_frames = SubResource("SpriteFrames_48auy")
+animation = &"active"
+autoplay = "active"
+
+[node name="GoldHBoxContainer" type="HBoxContainer" parent="GamePlayGUI"]
+layout_mode = 1
+offset_left = 140.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 245.0
+tooltip_text = "The amount of gold you currently possess"
+theme_override_constants/separation = 0
+
+[node name="GoldSprite" type="Sprite2D" parent="GamePlayGUI/GoldHBoxContainer"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_5y4de")
+offset = Vector2(-17.18, 5.44)
+
+[node name="GoldLabel" type="Label" parent="GamePlayGUI/GoldHBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "0"
+label_settings = SubResource("LabelSettings_sjlx3")
+vertical_alignment = 1
+
+[node name="QuestVBoxContainer" type="VBoxContainer" parent="GamePlayGUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -720.0
+offset_top = 60.0
+offset_right = -60.0
+offset_bottom = 260.0
+grow_horizontal = 0
+theme_override_constants/separation = 16
+
+[node name="QuestTitleLabel" type="Label" parent="GamePlayGUI/QuestVBoxContainer"]
+layout_mode = 2
+label_settings = ExtResource("5_6b4q2")
+horizontal_alignment = 2
+
+[node name="QuestDescriptionLabel" type="Label" parent="GamePlayGUI/QuestVBoxContainer"]
+custom_minimum_size = Vector2(660, 200)
+layout_mode = 2
+label_settings = ExtResource("6_m7yno")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="SettingsGUI" type="ReferenceRect" parent="."]
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 1936.0
+offset_bottom = 1098.0
+border_color = Color(0, 0, 0, 0)
+border_width = 0.0
+
+[node name="SettingsBG" type="TextureRect" parent="SettingsGUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -206.0
+offset_top = -148.0
+offset_right = 139.0
+offset_bottom = 527.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_fvfv1")
+
+[node name="SettingsVBoxContainer" type="VBoxContainer" parent="SettingsGUI"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 60.0
+offset_right = 854.0
+offset_bottom = 987.0
+theme_override_constants/separation = 80
+
+[node name="SettingsTitleLabel" type="Label" parent="SettingsGUI/SettingsVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Game Is Paused"
+
+[node name="ButtonsVBoxContainer" type="VBoxContainer" parent="SettingsGUI/SettingsVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MusicVolumeHBoxContainer" type="HBoxContainer" parent="SettingsGUI/SettingsVBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="MusicVolumeLabel" type="Label" parent="SettingsGUI/SettingsVBoxContainer/ButtonsVBoxContainer/MusicVolumeHBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Music Volume"
+
+[node name="MusicVolumeHSlider" type="HSlider" parent="SettingsGUI/SettingsVBoxContainer/ButtonsVBoxContainer/MusicVolumeHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("7_xux7s")
+min_value = -80.0
+max_value = -20.0
+value = -20.0
+
+[node name="MainMenuButton" type="Button" parent="SettingsGUI/SettingsVBoxContainer/ButtonsVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+tooltip_text = "Exits to the main menu"
+theme = ExtResource("7_ug1go")
+theme_type_variation = &"FlatButton"
+text = "Exit To Main Menu"
+flat = true
+
+[node name="QuestListVBoxContainer" type="VBoxContainer" parent="SettingsGUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -926.0
+offset_top = 60.0
+offset_right = -80.0
+offset_bottom = 827.0
+grow_horizontal = 0
+theme_override_constants/separation = 40
+
+[node name="QuestTitleLabel" type="Label" parent="SettingsGUI/QuestListVBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 38
+text = "Quest List"
+horizontal_alignment = 1
+
+[node name="QuestTabContainer" type="TabContainer" parent="SettingsGUI/QuestListVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("9_dfaxw")
+current_tab = 0
+
+[node name="Active" type="TabBar" parent="SettingsGUI/QuestListVBoxContainer/QuestTabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="ActiveQuestsLabel" type="Label" parent="SettingsGUI/QuestListVBoxContainer/QuestTabContainer/Active"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 18.0
+offset_right = 401.0
+offset_bottom = 629.0
+grow_horizontal = 2
+label_settings = ExtResource("10_a4ujg")
+autowrap_mode = 2
+
+[node name="Completed" type="TabBar" parent="SettingsGUI/QuestListVBoxContainer/QuestTabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="GoalCompletedQuestsLabel" type="Label" parent="SettingsGUI/QuestListVBoxContainer/QuestTabContainer/Completed"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 18.0
+offset_right = 401.0
+offset_bottom = 778.0
+grow_horizontal = 2
+label_settings = ExtResource("10_a4ujg")
+autowrap_mode = 2
+
+[node name="Finished" type="TabBar" parent="SettingsGUI/QuestListVBoxContainer/QuestTabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="FinishedQuestsLabel" type="Label" parent="SettingsGUI/QuestListVBoxContainer/QuestTabContainer/Finished"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -399.0
+offset_top = 18.0
+offset_right = 401.0
+offset_bottom = 778.0
+grow_horizontal = 2
+label_settings = ExtResource("10_a4ujg")
+autowrap_mode = 2
+
+[node name="ShopGUI" type="ReferenceRect" parent="."]
+visible = false
+offset_left = 16.0
+offset_top = 18.0
+offset_right = 1936.0
+offset_bottom = 1098.0
+border_color = Color(1, 0, 0, 0)
+border_width = 0.0
+
+[node name="ShopGUIBG" type="NinePatchRect" parent="ShopGUI"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 32.0
+offset_right = 1869.0
+offset_bottom = 1012.0
+texture = ExtResource("11_ecbje")
+region_rect = Rect2(0, 6, 60, 54)
+
+[node name="ShopGUIReferenceRect" type="ReferenceRect" parent="ShopGUI/ShopGUIBG"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 1805.0
+offset_bottom = 960.0
+border_color = Color(0.695093, 0.349972, 0.878956, 1)
+border_width = 4.0
+
+[node name="PlayersideReferenceRect" type="ReferenceRect" parent="ShopGUI/ShopGUIBG/ShopGUIReferenceRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 880.0
+offset_bottom = 915.0
+border_width = 2.0
+
+[node name="PlayerPictureReferenceRect" type="ReferenceRect" parent="ShopGUI/ShopGUIBG/ShopGUIReferenceRect/PlayersideReferenceRect"]
+layout_mode = 1
+offset_right = 315.0
+offset_bottom = 330.0
+border_color = Color(0.754817, 0.32463, 0.804492, 1)
+border_width = 2.0
+
+[node name="TextureRect" type="TextureRect" parent="ShopGUI/ShopGUIBG/ShopGUIReferenceRect/PlayersideReferenceRect/PlayerPictureReferenceRect"]
+layout_mode = 1
+offset_right = 315.0
+offset_bottom = 285.0
+texture = ExtResource("12_3refx")
+
+[node name="PlayerNameLabel" type="Label" parent="ShopGUI/ShopGUIBG/ShopGUIReferenceRect/PlayersideReferenceRect/PlayerPictureReferenceRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.5
+offset_top = -17.0
+offset_right = 21.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Han Tyumi"
+label_settings = ExtResource("13_76hhw")
+
+[node name="PlayerGoldReferenceRect" type="ReferenceRect" parent="ShopGUI/ShopGUIBG/ShopGUIReferenceRect/PlayersideReferenceRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = -80.0
+offset_right = 275.0
+offset_bottom = -40.0
+grow_vertical = 2
+
+[node name="GoldCoinIcon" type="TextureRect" parent="ShopGUI/ShopGUIBG/ShopGUIReferenceRect/PlayersideReferenceRect/PlayerGoldReferenceRect"]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_5y4de")
+
+[node name="GoldLabel" type="Label" parent="ShopGUI/ShopGUIBG/ShopGUIReferenceRect/PlayersideReferenceRect/PlayerGoldReferenceRect"]
+layout_mode = 2
+offset_left = 55.0
+offset_top = 10.0
+offset_right = 230.0
+offset_bottom = 33.0
+label_settings = SubResource("LabelSettings_dk75u")
+
+[connection signal="value_changed" from="SettingsGUI/SettingsVBoxContainer/ButtonsVBoxContainer/MusicVolumeHBoxContainer/MusicVolumeHSlider" to="." method="_on_music_volume_h_slider_value_changed"]
+[connection signal="pressed" from="SettingsGUI/SettingsVBoxContainer/ButtonsVBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

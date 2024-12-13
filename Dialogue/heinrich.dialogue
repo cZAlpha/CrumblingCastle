@@ -1,0 +1,69 @@
+~ start
+do gameManagerSwapInDialogue() # Swap the inDialogue state variable at the start of the dialogue sequence
+
+if !hasMetHeinrich: # If the player has not met Heinrich yet
+	Heinrich: [[Hi|Hello|Howdy]]
+	- Hello
+		Heinrich: Ever since the fires got close to shore, I haven't been able to catch any fish
+		- That's a shame
+			Heinrich: A shame indeed, but do you think you have what it takes to catch one?
+			- Yeah!
+				Heinrich: Go to the Dock, catch a fish and bring it back to me and I might just have a reward for you!
+				- Okay!
+					do startHeinrichFishingForFishiesQuest() # Start the fishing for fishies quest
+				- How about no
+			- I don't think so
+		- You must suck at fishing
+			do incrementHeinrichNPCRudenessMeter() # Rude option
+			Heinrich: What an insult! I bet you 30 gold that you can't catch a single fish!
+			- It's a deal
+			- I won't waste my time with you 
+				do incrementHeinrichNPCRudenessMeter() # Rude option
+				Heinrich: Get lost!
+		- Don't care, goodbye
+			do incrementHeinrichNPCRudenessMeter() # Rude option
+	- Goodbye
+	do metHeinrich() # Indicate that the player has met Heinrich after initial interaction
+	
+# NEED TO MAKE MET HEINRICH BUT WERENT RUDE OPTION
+if hasMetHeinrich and heinrichNPCRudenessMeter == 0: # If the player has met Heinrich but was not rude to him
+	Heinrich: Ever since the fires got close to shore, I haven't been able to catch any fish
+	- That's a shame
+		Heinrich: A shame indeed, but do you think you have what it takes to catch one?
+		- Yeah!
+			Heinrich: Go to the Dock, catch a fish and bring it back to me and I might just have a reward for you!
+			- Okay!
+				do startHeinrichFishingForFishiesQuest() # Start the fishing for fishies quest
+			- How about no
+		- I don't think so
+	- You must suck at fishing
+		do incrementHeinrichNPCRudenessMeter() # Rude option
+		Heinrich: What an insult! I bet you 30 gold that you can't catch a single fish!
+		- It's a deal
+		- I won't waste my time with you 
+			do incrementHeinrichNPCRudenessMeter() # Rude option
+			Heinrich: Get lost!
+	- Don't care, goodbye
+		do incrementHeinrichNPCRudenessMeter() # Rude option
+
+if hasMetHeinrich and heinrichNPCRudenessMeter == 1: # Rude only once
+	Heinrich: Ugh, you're that cocky bastard
+	- [[That's me!|Yup|How'd you know?]]
+		Heinrich: At least you admit your faults. But I won't converse with you any further until you apologize for your rudeness earlier
+		- Okay, I apologize 
+			do decrementHeinrichNPCRudenessMeter() # Nice option
+		- Kick rocks
+		- Maybe later
+	- Shut up, old man
+		do incrementHeinrichNPCRudenessMeter() # Rude option
+		Heinrich: I'm not old! Get lost!
+	- I can't deal with you right now
+
+if hasMetHeinrich and heinrichNPCRudenessMeter > 1: # Very rude
+	Heinrich: If you want to talk to me, you better apologize!
+	- Okay, I'm sorry
+		do decrementHeinrichNPCRudenessMeter() # Nice option
+	- Never
+
+do gameManagerSwapInDialogue() # Swap the inDialogue state variable at the start of the dialogue sequence
+=> END

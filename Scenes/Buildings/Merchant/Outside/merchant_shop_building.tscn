@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlqqifkvu3i0x"]
+
+[ext_resource type="Script" path="res://Scripts/Buildings/merchant_shop_building.gd" id="1_pigrv"]
+[ext_resource type="Texture2D" uid="uid://cu77t0v78wkj4" path="res://Assets/Tilesets/Buildings/building0.png" id="1_ytv3n"]
+[ext_resource type="LabelSettings" uid="uid://bfigod56hl327" path="res://Themes/merchant_shop_building_label_settings.tres" id="3_k76wv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lgcb"]
+size = Vector2(482, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3627n"]
+size = Vector2(236.25, 98.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54r84"]
+size = Vector2(161, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r153a"]
+size = Vector2(74.8, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2vd8"]
+size = Vector2(74, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcopt"]
+size = Vector2(156, 144)
+
+[node name="MerchantShopBuilding" type="Node2D"]
+y_sort_enabled = true
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_pigrv")
+
+[node name="BuidlingSprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_ytv3n")
+offset = Vector2(0, -250)
+region_rect = Rect2(-0.662354, -0.331924, 343.941, 187.36)
+
+[node name="Etc" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(0, -300)
+
+[node name="Hitboxes" type="Node2D" parent="Etc"]
+
+[node name="BuildingHitboxes" type="Node2D" parent="Etc/Hitboxes"]
+
+[node name="StaticBody2D_Upper" type="StaticBody2D" parent="Etc/Hitboxes/BuildingHitboxes"]
+collision_layer = 2
+collision_mask = 69
+
+[node name="CollisionShape2D_Upper" type="CollisionShape2D" parent="Etc/Hitboxes/BuildingHitboxes/StaticBody2D_Upper"]
+position = Vector2(-1, 266)
+shape = SubResource("RectangleShape2D_6lgcb")
+
+[node name="LowerStaticBodies" type="Node2D" parent="Etc/Hitboxes/BuildingHitboxes"]
+
+[node name="StaticBody2D_Lower0" type="StaticBody2D" parent="Etc/Hitboxes/BuildingHitboxes/LowerStaticBodies"]
+collision_layer = 2
+collision_mask = 69
+
+[node name="CollisionShape2D_Lower" type="CollisionShape2D" parent="Etc/Hitboxes/BuildingHitboxes/LowerStaticBodies/StaticBody2D_Lower0"]
+position = Vector2(-124, 341.25)
+shape = SubResource("RectangleShape2D_3627n")
+
+[node name="StaticBody2D_Lower1" type="StaticBody2D" parent="Etc/Hitboxes/BuildingHitboxes/LowerStaticBodies"]
+collision_layer = 2
+collision_mask = 69
+
+[node name="CollisionShape2D_Lower1" type="CollisionShape2D" parent="Etc/Hitboxes/BuildingHitboxes/LowerStaticBodies/StaticBody2D_Lower1"]
+position = Vector2(159.5, 343.5)
+shape = SubResource("RectangleShape2D_54r84")
+
+[node name="DoorArea2D" type="Area2D" parent="Etc" groups=["Door"]]
+collision_layer = 2
+
+[node name="DoorCollisionShape2D" type="CollisionShape2D" parent="Etc/DoorArea2D"]
+position = Vector2(36, 343.5)
+shape = SubResource("RectangleShape2D_r153a")
+
+[node name="AutoDoorArea2D" type="Area2D" parent="Etc" groups=["Door"]]
+
+[node name="AutoDoorCollisionShape2D" type="CollisionShape2D" parent="Etc/AutoDoorArea2D"]
+position = Vector2(36, 272)
+shape = SubResource("RectangleShape2D_h2vd8")
+
+[node name="JobBoardArea2D" type="Area2D" parent="Etc"]
+collision_layer = 2
+
+[node name="JobBoardCollisionShape2D" type="CollisionShape2D" parent="Etc/JobBoardArea2D"]
+position = Vector2(162, 348)
+shape = SubResource("RectangleShape2D_bcopt")
+
+[node name="DoorTooltip" type="Control" parent="Etc"]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_top = 172.0
+offset_right = 106.0
+offset_bottom = 188.0
+grow_horizontal = 2
+scale = Vector2(1.3, 1.3)
+
+[node name="DoorTooltipLabel" type="Label" parent="Etc/DoorTooltip"]
+layout_mode = 0
+offset_right = 193.0
+offset_bottom = 17.0
+text = "Press 'F' to Enter"
+label_settings = ExtResource("3_k76wv")
+
+[node name="JobBoardTooltip" type="Control" parent="Etc"]
+visible = false
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 65.0
+offset_top = 224.0
+offset_right = 244.0
+offset_bottom = 240.0
+grow_horizontal = 2
+
+[node name="JobBoardTooltipLabel" type="Label" parent="Etc/JobBoardTooltip"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 17.0
+text = "Press 'F' To Open"
+label_settings = ExtResource("3_k76wv")
+
+[connection signal="area_entered" from="Etc/DoorArea2D" to="." method="_on_door_area_2d_area_entered"]
+[connection signal="area_exited" from="Etc/DoorArea2D" to="." method="_on_door_area_2d_area_exited"]
+[connection signal="area_entered" from="Etc/AutoDoorArea2D" to="." method="_on_auto_door_area_2d_area_entered"]
+[connection signal="area_entered" from="Etc/JobBoardArea2D" to="." method="_on_job_board_area_2d_area_entered"]
+[connection signal="area_exited" from="Etc/JobBoardArea2D" to="." method="_on_job_board_area_2d_area_exited"]

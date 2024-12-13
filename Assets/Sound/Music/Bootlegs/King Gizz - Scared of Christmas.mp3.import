@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://id08xcq4tfbn"
+path="res://.godot/imported/King Gizz - Scared of Christmas.mp3-780760d6b60ffe9ba72945d8a31ab849.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Bootlegs/King Gizz - Scared of Christmas.mp3"
+dest_files=["res://.godot/imported/King Gizz - Scared of Christmas.mp3-780760d6b60ffe9ba72945d8a31ab849.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

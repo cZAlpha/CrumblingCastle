@@ -1,0 +1,206 @@
+[gd_scene load_steps=17 format=3 uid="uid://c4gsjr08jmtbq"]
+
+[ext_resource type="Script" path="res://Scripts/Minigames/fishing_for_fishies_minigame.gd" id="1_pr1vw"]
+[ext_resource type="Texture2D" uid="uid://dgj21hjfl4yx8" path="res://Assets/UI/NineRects/V2_generalUINineRect.png" id="1_wtato"]
+[ext_resource type="Texture2D" uid="uid://dumwfch0y8gvy" path="res://Assets/UI/Minigames/FishingForFishies/Fish/fish0.png" id="2_4y10t"]
+
+[sub_resource type="Gradient" id="Gradient_82rde"]
+offsets = PackedFloat32Array(0.015, 1)
+colors = PackedColorArray(0.545098, 0.847059, 0.415686, 0.823529, 0.545098, 0.847059, 0.415686, 0.823529)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xuv7p"]
+gradient = SubResource("Gradient_82rde")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j4f5"]
+size = Vector2(70, 70.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0iugv"]
+size = Vector2(70, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8723u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t83c7"]
+size = Vector2(60, 60)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rypjw"]
+bg_color = Color(0.729914, 0.819981, 0.657746, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.705882)
+shadow_size = 1
+shadow_offset = Vector2(2.48, 1.54)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsd0b"]
+bg_color = Color(0.28892, 0.693927, 0.254951, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_fqbfs"]
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/styles/background = SubResource("StyleBoxFlat_rypjw")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_bsd0b")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_akoub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxqqs"]
+size = Vector2(80, 15)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s8w1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvgvk"]
+size = Vector2(80, 14.9999)
+
+[node name="FishingForFishiesMinigame" type="Node2D"]
+process_mode = 3
+z_index = 1000
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_pr1vw")
+
+[node name="Background" type="ReferenceRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -400.0
+offset_right = 300.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wtato")
+region_rect = Rect2(0, 10, 60, 50)
+
+[node name="BarBackground" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -318.0
+offset_right = 40.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47671, 0.551656, 0.734565, 1)
+
+[node name="Game" type="ReferenceRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -327.0
+offset_right = 288.0
+offset_bottom = 435.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hook" type="CharacterBody2D" parent="Game"]
+z_index = 1
+position = Vector2(288, 326.62)
+collision_layer = 32
+collision_mask = 8
+
+[node name="HookSprite2D" type="Sprite2D" parent="Game/Hook"]
+position = Vector2(0, -3.05176e-05)
+scale = Vector2(0.96, 1.5)
+texture = SubResource("GradientTexture2D_xuv7p")
+
+[node name="HookCollisionShape2D" type="CollisionShape2D" parent="Game/Hook"]
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.96, 1.5)
+shape = SubResource("RectangleShape2D_1j4f5")
+
+[node name="HookArea2D" type="Area2D" parent="Game/Hook" groups=["Hook"]]
+collision_layer = 32
+collision_mask = 16
+
+[node name="HookAreaCollisionShape2D" type="CollisionShape2D" parent="Game/Hook/HookArea2D"]
+position = Vector2(1.19209e-06, -2.5)
+shape = SubResource("RectangleShape2D_0iugv")
+
+[node name="Fish" type="CharacterBody2D" parent="Game"]
+position = Vector2(288, 501.62)
+collision_layer = 16
+collision_mask = 8
+motion_mode = 1
+
+[node name="FishSprite2D" type="Sprite2D" parent="Game/Fish"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_4y10t")
+
+[node name="FishCollisionShape2D" type="CollisionShape2D" parent="Game/Fish"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_8723u")
+
+[node name="FishArea2D" type="Area2D" parent="Game/Fish" groups=["Fish"]]
+collision_layer = 16
+collision_mask = 32
+
+[node name="FishAreaCollisionShape2D" type="CollisionShape2D" parent="Game/Fish/FishArea2D"]
+position = Vector2(-1.19209e-06, 0)
+shape = SubResource("RectangleShape2D_t83c7")
+
+[node name="FishingProgressBar" type="ProgressBar" parent="Game"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -38.97
+offset_right = 200.0
+offset_bottom = -17.97
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_fqbfs")
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 19
+
+[node name="Colliders" type="Node2D" parent="Game"]
+position = Vector2(-0.5, -1)
+
+[node name="TopColliderStaticArea2D" type="StaticBody2D" parent="Game/Colliders"]
+position = Vector2(288, 1.61999)
+collision_layer = 8
+collision_mask = 56
+physics_material_override = SubResource("PhysicsMaterial_akoub")
+
+[node name="TopCollisionShape2D" type="CollisionShape2D" parent="Game/Colliders/TopColliderStaticArea2D"]
+position = Vector2(-2.38419e-06, 0)
+shape = SubResource("RectangleShape2D_vxqqs")
+
+[node name="BottomStaticBody2D" type="StaticBody2D" parent="Game/Colliders"]
+position = Vector2(288, 696.62)
+collision_layer = 8
+collision_mask = 56
+physics_material_override = SubResource("PhysicsMaterial_s8w1q")
+
+[node name="BottomCollisionShape2D" type="CollisionShape2D" parent="Game/Colliders/BottomStaticBody2D"]
+position = Vector2(3.57628e-06, 3.05176e-05)
+shape = SubResource("RectangleShape2D_cvgvk")
+
+[connection signal="area_entered" from="Game/Hook/HookArea2D" to="." method="_on_hook_area_2d_area_entered"]
+[connection signal="area_exited" from="Game/Hook/HookArea2D" to="." method="_on_hook_area_2d_area_exited"]

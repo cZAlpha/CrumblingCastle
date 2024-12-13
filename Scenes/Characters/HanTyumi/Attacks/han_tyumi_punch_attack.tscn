@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkyea4f4ttjb6"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/HanTyumi/Attacks/han_tyumi_punch_attack.gd" id="1_dbhym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni8ro"]
+size = Vector2(35, 35)
+
+[node name="HanTyumiPunchAttack" type="Area2D" groups=["PlayerAttack"]]
+script = ExtResource("1_dbhym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ni8ro")
+debug_color = Color(3.27289e-06, 0.704461, 0.820408, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3mnkwybpuynw"]
+
+[ext_resource type="Texture2D" uid="uid://ctuttnxdsscqn" path="res://Assets/Images/MusicCovers/cover.jpg" id="1_371dc"]
+[ext_resource type="Script" path="res://Scripts/UI/credits_sequence.gd" id="1_t4pe1"]
+[ext_resource type="Texture2D" uid="uid://bu3m7pbrfmnkl" path="res://Assets/Images/MusicCovers/King Gizzard & The Lizard Wizard - Demos Vol. 1 + Vol. 2 - Bootleg logo.png" id="2_7i6do"]
+[ext_resource type="Texture2D" uid="uid://dsfyb8w5a8m1j" path="res://Assets/Images/MusicCovers/Polygonwanaland_cover.jpg" id="3_r2uy8"]
+[ext_resource type="LabelSettings" uid="uid://cbhitwo70haw0" path="res://Themes/musicTitle_LabelSettings.tres" id="5_d0vjn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u4q7n"]
+font_size = 60
+
+[node name="CreditsSequence" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t4pe1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MusicCreditTitleLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 80.0
+offset_right = 100.0
+offset_bottom = 141.0
+grow_horizontal = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_u4q7n")
+
+[node name="MusicCoverImagesHBox" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -923.0
+offset_top = -340.0
+offset_right = 17637.0
+offset_bottom = 5480.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+theme_override_constants/separation = 550
+alignment = 1
+
+[node name="Demo5&6TextureRect" type="TextureRect" parent="CanvasLayer/MusicCoverImagesHBox"]
+layout_mode = 2
+texture = ExtResource("1_371dc")
+expand_mode = 2
+
+[node name="OfficialBootleggerTextureRect" type="TextureRect" parent="CanvasLayer/MusicCoverImagesHBox"]
+layout_mode = 2
+texture = ExtResource("2_7i6do")
+expand_mode = 2
+
+[node name="PolygonwanalandCoverTextureRect" type="TextureRect" parent="CanvasLayer/MusicCoverImagesHBox"]
+layout_mode = 2
+texture = ExtResource("3_r2uy8")
+expand_mode = 2
+
+[node name="Demo5&6Label" type="Label" parent="CanvasLayer"]
+offset_left = 184.0
+offset_top = 820.0
+offset_right = 441.0
+offset_bottom = 856.0
+text = "Demos 5 & 6"
+label_settings = ExtResource("5_d0vjn")
+
+[node name="OfficialBootleggerLabel" type="Label" parent="CanvasLayer"]
+offset_left = 748.42
+offset_top = 820.0
+offset_right = 1191.42
+offset_bottom = 856.0
+text = "Official Bootlegger"
+label_settings = ExtResource("5_d0vjn")
+horizontal_alignment = 1
+
+[node name="Polygonwanaland" type="Label" parent="CanvasLayer"]
+offset_left = 1431.68
+offset_top = 820.0
+offset_right = 1781.68
+offset_bottom = 856.0
+text = "Polygonwanaland"
+label_settings = ExtResource("5_d0vjn")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://drfaejxeroa5y"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/sound_manager.gd" id="1_8njsg"]
+
+[node name="SoundManager" type="Node"]
+script = ExtResource("1_8njsg")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="SoundFX" type="AudioStreamPlayer" parent="."]

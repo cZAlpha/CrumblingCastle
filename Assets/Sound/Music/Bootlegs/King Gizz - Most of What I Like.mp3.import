@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds31sbyuha78j"
+path="res://.godot/imported/King Gizz - Most of What I Like.mp3-1dc8204b8e7a31510f4ea8d6a06e5927.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Music/Bootlegs/King Gizz - Most of What I Like.mp3"
+dest_files=["res://.godot/imported/King Gizz - Most of What I Like.mp3-1dc8204b8e7a31510f4ea8d6a06e5927.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

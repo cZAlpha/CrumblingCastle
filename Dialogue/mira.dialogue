@@ -1,0 +1,63 @@
+~ start
+do gameManagerSwapInDialogue() # Swap the inDialogue state variable at the start of the dialogue sequence
+# The inital dialogue for Mira
+if !hasMetMira:
+	Mira: Hello, stranger!
+	Mira: I just got to town and have been trying to stay away from the fires...
+	- What fires?
+		Mira: Haven't you seen the fires out to the west?
+		- No, I haven't
+			Mira: Go see for yourself! I'll give you a few coins if you get close to it, I dare you!
+			- Okay
+				do startMiraFireQuest()
+			- No way
+		- Yes I have
+			Mira: Then why are you asking me? The smoke is suffocating!
+	- No one asked...
+		Mira: You're rude!
+		do incrementMiraNPCRudenessMeter()
+	do metMira() # Indicate that the player has met Mira after initial interaction
+
+if startedMiraNPCFireQuest and !goalReachedMiraNPCFireQuest: # If the player has not yet finished Mira's quest
+	Mira: Hello
+	- Where was the fire again?
+		Mira: To the west of town, silly!
+	- How are you?
+		Mira: I'd be better if you went and saw the fire yourself!
+
+if startedMiraNPCFireQuest and goalReachedMiraNPCFireQuest: # If the player has reached the goal of Mira's quest
+	Mira: Hey there!
+	- I saw the fires
+		Mira: Yeah, they're huge
+	- How are you?
+		Mira: I'm doing well, and you?
+		- I'm okay
+			Mira: I'm glad to hear that
+		- Not great
+			Mira: I'm sorry to hear that...
+
+if miraNPCRudenessMeter == 1 and hasMetMira: # If you were rude to Mira after initally meeting her
+	Mira: Hey, idiot.
+	- What's with you?
+		Mira: Don't be rude to me and then expect me to be kind to you
+		- I'm sorry for being rude to you
+			Mira: I accept your apology
+			do decrementMiraNPCRudenessMeter()
+		- Whatever.
+			Mira: Get lost!
+			do incrementMiraNPCRudenessMeter()
+		- *Say Nothing*
+			Mira: Whatever
+	- No, you're the idiot
+		Mira: Never speak to me again!
+		do incrementMiraNPCRudenessMeter()
+
+if miraNPCRudenessMeter > 1 and hasMetMira: # If you were rude to Mira multiple times after initially meeting her
+	Mira: Go away!
+
+# If you apologized to Mira after being rude at least once
+if miraNPCRudenessMeter == 0 and hasMetMira and !startedMiraNPCFireQuest: 
+	Mira: Hello
+
+do gameManagerSwapInDialogue() # Swap the inDialogue state variable at the end of the dialogue sequence
+=> END

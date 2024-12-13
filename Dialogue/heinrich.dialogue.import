@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c668jh8gk2vk5"
+path="res://.godot/imported/heinrich.dialogue-72d051058b350f777167c17d072b49e6.tres"
+
+[deps]
+
+source_file="res://Dialogue/heinrich.dialogue"
+dest_files=["res://.godot/imported/heinrich.dialogue-72d051058b350f777167c17d072b49e6.tres"]
+
+[params]
+
+defaults=true

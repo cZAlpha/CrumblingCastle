@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb8ie7o0c0yoy"]
+
+[ext_resource type="Texture2D" uid="uid://doswrr1bl27lv" path="res://Assets/Images/StudioImages/red_chevron.png" id="1_gomva"]
+[ext_resource type="Script" path="res://Scripts/UI/studio_sequence.gd" id="1_mwexh"]
+
+[node name="StudioSequence" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mwexh")
+
+[node name="cZAlphaInroCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RedChevronTextureRect0" type="TextureRect" parent="cZAlphaInroCanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gomva")
+
+[node name="RedChevronTextureRect1" type="TextureRect" parent="cZAlphaInroCanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gomva")
+
+[node name="RedChevronTextureRect2" type="TextureRect" parent="cZAlphaInroCanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gomva")

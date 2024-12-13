@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs30q7tsv04pg"]
+
+[sub_resource type="Gradient" id="Gradient_3jdtg"]
+offsets = PackedFloat32Array(0, 0.0960591, 0.359606, 0.635468, 1)
+colors = PackedColorArray(0.349478, 0.550233, 1, 1, 0.46306, 0.437831, 0.755335, 1, 0.878283, 0.181623, 0.123976, 1, 0.958043, 0.313467, 0.252207, 1, 0.797808, 0.314359, 0.149862, 1)
+
+[node name="Flames" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 150
+lifetime = 0.35
+explosiveness = 0.1
+randomness = 0.24
+lifetime_randomness = 0.15
+fixed_fps = 40
+emission_shape = 1
+emission_sphere_radius = 6.0
+gravity = Vector2(0, -980)
+initial_velocity_max = 3.98
+radial_accel_min = 2.39
+radial_accel_max = 8.97
+tangential_accel_min = 3.98
+tangential_accel_max = 16.73
+angle_min = 1.0
+angle_max = 30.0
+scale_amount_min = 0.2
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_3jdtg")
